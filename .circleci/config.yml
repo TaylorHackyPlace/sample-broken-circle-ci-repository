@@ -19,7 +19,7 @@ jobs:
       - slack/notify:
           color: '#42e2f4'
           message: Your build has finished.
-          webhook: 
+          webhook: https://hooks.slack.com/services/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
       - notify_job_status
 orbs:
   slack: circleci/slack@3.3.0
