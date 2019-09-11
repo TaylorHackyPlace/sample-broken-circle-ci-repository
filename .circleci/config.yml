@@ -7,8 +7,8 @@ commands:
           name: On success
           when: on_success
           command: |
-            #curl https://postman-demo-n6am0.demo-transposit.com/api/v1/execute-http/webhook_circleci?api_key=dvamftnku6qug2km0b9t3aucj2 -d '{"payload":{"reponame":"'"$CIRCLE_PROJECT_REPONAME"'","branch":"'"$CIRCLE_BRANCH"'","build_parameters":{"CIRCLE_JOB":"'"$CIRCLE_JOB"'"},"outcome":"fixed","build_url":"'"$CIRCLE_BUILD_URL"'"}}' -H "Content-Type: application/json" -X POST --fail
-            curl https://slack-postman-qqifv.demo-transposit.com/api/v1/execute-http/webhook_circleci?api_key=39jup4cr6la8f9afpiddrmc0f6 -d '{"payload":{"reponame":"'"$CIRCLE_PROJECT_REPONAME"'","branch":"'"$CIRCLE_BRANCH"'","build_parameters":{"CIRCLE_JOB":"'"$CIRCLE_JOB"'"},"outcome":"fixed","build_url":"'"$CIRCLE_BUILD_URL"'"}}' -H "Content-Type: application/json" -X POST --fail
+            curl https://slack-postman-test-ova72.transposit.io/api/v1/execute-http/webhook_circleci?api_key=pg7h7nsac7mpk0v8in7puce35f -d '{"payload":{"reponame":"'"$CIRCLE_PROJECT_REPONAME"'","branch":"'"$CIRCLE_BRANCH"'","build_parameters":{"CIRCLE_JOB":"'"$CIRCLE_JOB"'"},"outcome":"fixed","build_url":"'"$CIRCLE_BUILD_URL"'"}}' -H "Content-Type: application/json" -X POST --fail
+
 jobs:
   build:
     docker:
@@ -19,7 +19,7 @@ jobs:
       - slack/notify:
           color: '#42e2f4'
           message: Your build has finished.
-          webhook: https://hooks.slack.com/services/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
+          webhook: 
       - notify_job_status
 orbs:
   slack: circleci/slack@3.3.0
